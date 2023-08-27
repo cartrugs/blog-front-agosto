@@ -1,0 +1,22 @@
+<section>
+  <h1>Búsqueda de Artículos</h1>
+  <form action="/search" method="GET">
+    <input type="text" name="query" placeholder="Buscar...">
+    <button type="submit">Buscar</button>
+  </form>
+  <% searchResults.forEach(result=> { %>
+    <div>
+      <h2>
+        <%= result.title %>
+      </h2>
+      <p>
+        <%= result.date %>
+      </p>
+      <img src="<%= result.headerImage.url %>" alt="<%= result.headerImage.alt %>">
+      <p>
+        <%= result.excerpt %>
+      </p>
+      <a href="/article/<%= result.id %>">Leer más</a>
+    </div>
+    <% }); %>
+</section>

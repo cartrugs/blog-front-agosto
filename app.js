@@ -32,18 +32,15 @@ app.set('view engine', 'ejs');
 app.set('views', __dirname + '/views');
 
 // Rutas del frontend
-// app.use("/", require("./routes/frontRoutes"));
+app.use("/", require("./routes/frontRoutes"));
 app.use("/admin", require('./routes/adminRoutes'));
 
-// app.use('/', frontRoutes);
-// app.use('/admin', adminRoutes);
-
 // Manejo de error 404
-// app.use((req, res, next) => {
-//     res.status(404).render('404', {
-//         titulo: 'ERROR 404'
-//     });
-// });
+app.use((req, res, next) => {
+    res.status(404).render('404', {
+        titulo: 'ERROR 404'
+    });
+});
 
 // Manejo de subida de archivos con Multer
 app.post('/stats', upload.single('uploaded_file'), function (req, res) {
