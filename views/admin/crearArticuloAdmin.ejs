@@ -1,0 +1,19 @@
+<%- include ('templates/adminHeader.ejs') %>
+<%- include('templates/adminNav.ejs') %>
+
+<main>
+    <h1>Crear articulo</h1>
+    <form action="/admin/articulo/crear" method="post" enctype="multipart/form-data">
+        <label for="titulo">Título:</label>
+        <input type="text" id="titulo" name="titulo" required>
+        <label for="imagen">Imagen:</label>
+        <input type="file" id="imagen" name="imagen" accept="image/*" required>
+        <label for="contenido">Contenido:</label>
+        <textarea id="contenido" name="contenido" required></textarea>
+
+        <button type="submit">Guardar</button>
+    </form>
+</main>
+
+<%- include ('templates/adminFooter.ejs') %>
+

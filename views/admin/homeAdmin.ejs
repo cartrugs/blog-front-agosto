@@ -1,0 +1,58 @@
+<%- include ('templates/adminHeader.ejs') %>
+<%- include('templates/adminNav.ejs') %>
+
+<main>
+    <h1>Panel de Administración</h1>
+    <h2>Bienvenido, [Nombre del Administrador]</h2>
+
+    <h3>Entradas de Blog</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Título</th>
+                <th>Fecha</th>
+                <th>Autor</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Bucle forEach para mostrar las entradas de blog -->
+            <% blogEntries.forEach(entry => { %>
+                <tr>
+                    <td><%= entry.title %></td>
+                    <td><%= entry.date %></td>
+                    <td><%= entry.author %></td>
+                    <td>
+                        <button>Editar</button>
+                        <button>Eliminar</button>
+                    </td>
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+
+    <h3>Usuarios</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Email</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Bucle forEach para mostrar los usuarios -->
+            <% users.forEach(user => { %>
+                <tr>
+                    <td><%= user.nombre %></td>
+                    <td><%= user.email %></td>
+                    <td>
+                        <button>Eliminar</button>
+                    </td>
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+</main>
+
+<%- include ('templates/adminFooter.ejs') %>
