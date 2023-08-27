@@ -1,0 +1,61 @@
+<%- include ('templates/adminHeader.ejs') %>
+<%- include('templates/adminNav.ejs') %>
+
+<main class="container">
+    <h1 class="textCenter bgDark bRad2">Panel de Administración</h1>
+    <h2 class="textCenter">Bienvenido, [Nombre del Administrador]</h2>
+
+    <div>
+        <button id="crearArticuloBtn" class="btnAdmin1 bRad letterSpacing bgDark">Crear artículo</button>
+        <button id="cerrarSesionBtn" class="btnAdmin1 bRad letterSpacing bgDark">Cerrar sesión</button>
+    </div>
+
+    <h3>Entradas de Blog</h3>
+    <table class="container flexContainer">
+        <thead>
+            <tr>
+                <th>Título</th>
+                <th>Fecha</th>
+                <th>Autor</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Bucle forEach para mostrar las entradas de blog -->
+            <% blogEntries.forEach(entry => { %>
+                <tr>
+                    <td><%= entry.title %></td>
+                    <td><%= entry.date %></td>
+                    <td><%= entry.author %></td>
+                    <td>
+                        <button id="editarEntradaBtn" class="btnAdmin bRad2 letterSpacing">Editar</button>
+                        <button id="eliminarEntradaBtn" class="btnAdmin bRad2 letterSpacing">Eliminar</button>
+                    </td>
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+
+    <h3>Usuarios</h3>
+    <table class="fullContainer flexContainer">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Bucle forEach para mostrar los usuarios -->
+            <% users.forEach(user => { %>
+                <tr>
+                    <td><%= user.nombre %></td>
+                    <td><%= user.email %></td>
+                    <td>
+                        <button id="eliminarUsuarioBtn" class="btnAdmin bRad2 letterSpacing">Eliminar usuario</button>
+                    </td>
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+</main>
+
+<%- include ('templates/adminFooter.ejs') %>

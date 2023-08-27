@@ -1,0 +1,11 @@
+
+<h1>Últimos Artículos</h1>
+<% articleList.forEach(article => { %>
+  <div>
+    <h2><%= article.title %></h2>
+    <p><%= article.date %></p>
+    <img src="<%= article.headerImage.url %>" alt="<%= article.headerImage.alt %>">
+    <p><%= article.excerpt %></p>
+    <a href="/article/<%= article.id %>">Leer más</a>
+  </div>
+<% }); %>
