@@ -40,9 +40,18 @@ npm start
 ```
 ____________________________
 
+## Poner en marcha el puerto: :electric_plug: 
+```javascript
+npm run dev 
+``` 
+____________________________
+
 ## Variables de entorno: :key:
 
 Crea un archivo .env en la raíz de este proyecto y agrega las siguientes variables:
+
+- PORT = Escoge_un_puerto
+- URI_DB= Tu_URI_de_Base_de_Datos
 
 ____________________________
 
